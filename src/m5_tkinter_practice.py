@@ -46,13 +46,24 @@ def main():
     button['command'] = lambda: print('Hello!')
 
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
+
+    my_entry_box = ttk.Entry(frame)
+    my_entry_box.grid()
+
+    butun = ttk.Button(frame, text='Please enter text :)')
+    butun['command'] = (lambda: printy(my_entry_box))
+    butun.grid()
+
+    def printy(entry_box):
+        box = entry_box.get()
+        print(box)
 
     # -------------------------------------------------------------------------
     # TODO: 7.
